@@ -1,0 +1,2788 @@
+{
+    "__inputs": [
+        {
+            "name": "DS_PROMETHEUS",
+            "label": "Prometheus",
+            "description": "",
+            "type": "datasource",
+            "pluginId": "prometheus",
+            "pluginName": "Prometheus"
+        }
+    ],
+    "__requires": [
+        {
+            "type": "panel",
+            "id": "gauge",
+            "name": "Gauge",
+            "version": ""
+        },
+        {
+            "type": "grafana",
+            "id": "grafana",
+            "name": "Grafana",
+            "version": "7.5.5"
+        },
+        {
+            "type": "panel",
+            "id": "graph",
+            "name": "Graph",
+            "version": ""
+        },
+        {
+            "type": "panel",
+            "id": "piechart",
+            "name": "Pie chart v2",
+            "version": ""
+        },
+        {
+            "type": "datasource",
+            "id": "prometheus",
+            "name": "Prometheus",
+            "version": "1.0.0"
+        },
+        {
+            "type": "panel",
+            "id": "stat",
+            "name": "Stat",
+            "version": ""
+        }
+    ],
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "Dashboard for the IOTA node sofware",
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": null,
+    "iteration": 1621172015406,
+    "links": [],
+    "panels": [
+        {
+            "collapsed": false,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 0
+            },
+            "id": 2,
+            "panels": [],
+            "title": "Status",
+            "type": "row"
+        },
+        {
+            "datasource": null,
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 2,
+                "w": 2,
+                "x": 0,
+                "y": 1
+            },
+            "id": 64,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "last"
+                    ],
+                    "fields": "/^HORNET$/",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "name"
+            },
+            "pluginVersion": "7.5.5",
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "iota_node_app_info",
+                    "interval": "",
+                    "legendFormat": "",
+                    "refId": "A"
+                }
+            ],
+            "transformations": [
+                {
+                    "id": "labelsToFields",
+                    "options": {
+                        "valueLabel": "name"
+                    }
+                }
+            ],
+            "type": "stat"
+        },
+        {
+            "datasource": null,
+            "description": "Node Version",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 2,
+                "w": 2,
+                "x": 2,
+                "y": 1
+            },
+            "id": 4,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "last"
+                    ],
+                    "fields": "/^1\\.0.1$/",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "name"
+            },
+            "pluginVersion": "7.5.5",
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "iota_node_app_info",
+                    "interval": "",
+                    "legendFormat": "",
+                    "refId": "A"
+                }
+            ],
+            "title": "Node version",
+            "transformations": [
+                {
+                    "id": "labelsToFields",
+                    "options": {
+                        "valueLabel": "version"
+                    }
+                }
+            ],
+            "type": "stat"
+        },
+        {
+            "datasource": null,
+            "description": "Uptime of the node",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "blue",
+                                "value": null
+                            }
+                        ]
+                    },
+                    "unit": "dtdurations"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 2,
+                "w": 2,
+                "x": 4,
+                "y": 1
+            },
+            "id": 5,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "last"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "7.5.5",
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "time() - process_start_time_seconds{job=\"iota-node\"}",
+                    "interval": "",
+                    "legendFormat": "",
+                    "refId": "A"
+                }
+            ],
+            "title": "Uptime",
+            "transformations": [],
+            "type": "stat"
+        },
+        {
+            "datasource": null,
+            "description": "The sync stat of the Node",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [
+                        {
+                            "from": "0",
+                            "id": 1,
+                            "text": "Yes",
+                            "to": "",
+                            "type": 1,
+                            "value": "0"
+                        },
+                        {
+                            "from": "1",
+                            "id": 2,
+                            "text": "No",
+                            "to": "99999999999999999999",
+                            "type": 2,
+                            "value": ""
+                        }
+                    ],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "#EAB839",
+                                "value": 1
+                            },
+                            {
+                                "color": "red",
+                                "value": 2
+                            }
+                        ]
+                    },
+                    "unit": "none"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 2,
+                "w": 2,
+                "x": 6,
+                "y": 1
+            },
+            "id": 6,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "last"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "7.5.5",
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "iota_node_milestones{type=\"latest\"} - on () iota_node_milestones{type=\"confirmed\"}",
+                    "hide": false,
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "",
+                    "refId": "A"
+                }
+            ],
+            "title": "Synced",
+            "transformations": [],
+            "type": "stat"
+        },
+        {
+            "datasource": null,
+            "description": "Health status of the node",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [
+                        {
+                            "from": "0",
+                            "id": 1,
+                            "text": "No",
+                            "to": "",
+                            "type": 1,
+                            "value": "0"
+                        },
+                        {
+                            "from": "",
+                            "id": 2,
+                            "text": "Yes",
+                            "to": "",
+                            "type": 1,
+                            "value": "1"
+                        }
+                    ],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "red",
+                                "value": null
+                            },
+                            {
+                                "color": "green",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    "unit": "none"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 2,
+                "w": 2,
+                "x": 8,
+                "y": 1
+            },
+            "id": 47,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "last"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "7.5.5",
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "iota_node_health",
+                    "hide": false,
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "",
+                    "refId": "A"
+                }
+            ],
+            "title": "Healthy",
+            "transformations": [],
+            "type": "stat"
+        },
+        {
+            "datasource": null,
+            "description": "Messages and referenced messages per second",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "blue",
+                                "value": null
+                            },
+                            {
+                                "color": "green",
+                                "value": 500
+                            },
+                            {
+                                "color": "super-light-yellow",
+                                "value": 1000
+                            },
+                            {
+                                "color": "dark-yellow",
+                                "value": 1500
+                            },
+                            {
+                                "color": "dark-orange",
+                                "value": 2000
+                            },
+                            {
+                                "color": "#ff0000",
+                                "value": 3000
+                            },
+                            {
+                                "color": "rgb(64, 0, 0)",
+                                "value": 3010
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 2,
+                "w": 4,
+                "x": 10,
+                "y": 1
+            },
+            "id": 8,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "7.5.5",
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "iota_node_messages_per_second",
+                    "interval": "",
+                    "legendFormat": "MPS",
+                    "refId": "A"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "iota_node_referenced_messages_per_second",
+                    "hide": false,
+                    "interval": "",
+                    "legendFormat": "RMPS",
+                    "refId": "B"
+                }
+            ],
+            "title": "MPS",
+            "type": "stat"
+        },
+        {
+            "datasource": null,
+            "description": "Ratio of referenced messages in relation to new messages of the last confirmed milestone.",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "red",
+                                "value": null
+                            },
+                            {
+                                "color": "#EAB839",
+                                "value": 61.8
+                            },
+                            {
+                                "color": "green",
+                                "value": 85.4
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 2,
+                "w": 2,
+                "x": 14,
+                "y": 1
+            },
+            "id": 14,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "7.5.5",
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "iota_node_referenced_rate",
+                    "interval": "",
+                    "legendFormat": "",
+                    "refId": "A"
+                }
+            ],
+            "title": "Ratio RMPS to MPS",
+            "type": "stat"
+        },
+        {
+            "datasource": null,
+            "description": "CPU usage",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "blue",
+                                "value": null
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 2,
+                "w": 2,
+                "x": 16,
+                "y": 1
+            },
+            "id": 10,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "7.5.5",
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "rate(process_cpu_seconds_total{job=\"iota-node\"}[30s]) * 100",
+                    "interval": "",
+                    "legendFormat": "",
+                    "refId": "A"
+                }
+            ],
+            "title": "CPU Usage",
+            "type": "stat"
+        },
+        {
+            "datasource": null,
+            "description": "RAM usage",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "blue",
+                                "value": null
+                            }
+                        ]
+                    },
+                    "unit": "decbytes"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 2,
+                "w": 2,
+                "x": 18,
+                "y": 1
+            },
+            "id": 49,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "7.5.5",
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "(go_memstats_heap_inuse_bytes{job=\"iota-node\"} + (go_memstats_heap_idle_bytes{job=\"iota-node\"} - go_memstats_heap_released_bytes{job=\"iota-node\"}) + go_memstats_mspan_inuse_bytes{job=\"iota-node\"} + go_memstats_mcache_inuse_bytes{job=\"iota-node\"} + go_memstats_stack_sys_bytes{job=\"iota-node\"})",
+                    "interval": "",
+                    "legendFormat": "",
+                    "refId": "A"
+                }
+            ],
+            "title": "RAM Usage",
+            "type": "stat"
+        },
+        {
+            "datasource": null,
+            "description": "Size of the ledger database",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "blue",
+                                "value": null
+                            }
+                        ]
+                    },
+                    "unit": "decbytes"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 2,
+                "w": 2,
+                "x": 20,
+                "y": 1
+            },
+            "id": 12,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "7.5.5",
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "iota_database_size_bytes",
+                    "interval": "",
+                    "legendFormat": "",
+                    "refId": "A"
+                }
+            ],
+            "title": "Database Size",
+            "type": "stat"
+        },
+        {
+            "datasource": null,
+            "description": "Neighbors count",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "red",
+                                "value": null
+                            },
+                            {
+                                "color": "yellow",
+                                "value": 1
+                            },
+                            {
+                                "color": "green",
+                                "value": 3
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 2,
+                "w": 2,
+                "x": 22,
+                "y": 1
+            },
+            "id": 23,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "7.5.5",
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "sum(iota_gossip_peers_connected_count)",
+                    "interval": "",
+                    "legendFormat": "",
+                    "refId": "A"
+                }
+            ],
+            "title": "Neighbors",
+            "type": "stat"
+        },
+        {
+            "datasource": null,
+            "description": "Current MPS",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "max": 5000,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "blue",
+                                "value": null
+                            },
+                            {
+                                "color": "green",
+                                "value": 500
+                            },
+                            {
+                                "color": "super-light-yellow",
+                                "value": 1000
+                            },
+                            {
+                                "color": "yellow",
+                                "value": 1500
+                            },
+                            {
+                                "color": "dark-orange",
+                                "value": 2000
+                            },
+                            {
+                                "color": "rgb(255, 0, 0)",
+                                "value": 3000
+                            },
+                            {
+                                "color": "rgb(64, 0, 0)",
+                                "value": 4000
+                            }
+                        ]
+                    },
+                    "unit": "MPS"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 4,
+                "x": 0,
+                "y": 3
+            },
+            "id": 57,
+            "options": {
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "text": {}
+            },
+            "pluginVersion": "7.5.5",
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "iota_node_messages_per_second",
+                    "instant": true,
+                    "interval": "",
+                    "legendFormat": "",
+                    "refId": "A"
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Current",
+            "type": "gauge"
+        },
+        {
+            "datasource": null,
+            "description": "MPS in the last 10 minutes",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "blue",
+                                "value": null
+                            },
+                            {
+                                "color": "green",
+                                "value": 500
+                            },
+                            {
+                                "color": "super-light-yellow",
+                                "value": 1000
+                            },
+                            {
+                                "color": "yellow",
+                                "value": 1500
+                            },
+                            {
+                                "color": "dark-orange",
+                                "value": 2000
+                            },
+                            {
+                                "color": "#ff0000",
+                                "value": 3000
+                            },
+                            {
+                                "color": "rgb(64, 0, 0)",
+                                "value": 4000
+                            }
+                        ]
+                    },
+                    "unit": "MPS"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 3,
+                "x": 4,
+                "y": 3
+            },
+            "id": 59,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "value"
+            },
+            "pluginVersion": "7.5.5",
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "iota_node_messages_per_second",
+                    "interval": "",
+                    "legendFormat": "",
+                    "refId": "A"
+                }
+            ],
+            "timeFrom": "10m",
+            "timeShift": null,
+            "type": "stat"
+        },
+        {
+            "datasource": null,
+            "description": "MPS in the last day",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "blue",
+                                "value": null
+                            },
+                            {
+                                "color": "green",
+                                "value": 500
+                            },
+                            {
+                                "color": "super-light-yellow",
+                                "value": 1000
+                            },
+                            {
+                                "color": "dark-yellow",
+                                "value": 1500
+                            },
+                            {
+                                "color": "dark-orange",
+                                "value": 2000
+                            },
+                            {
+                                "color": "#ff0000",
+                                "value": 3000
+                            },
+                            {
+                                "color": "rgb(64, 0, 0)",
+                                "value": 4000
+                            }
+                        ]
+                    },
+                    "unit": "MPS"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 9,
+                "x": 7,
+                "y": 3
+            },
+            "id": 61,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "mean"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "value"
+            },
+            "pluginVersion": "7.5.5",
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "iota_node_messages_per_second",
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "",
+                    "refId": "A"
+                }
+            ],
+            "timeFrom": "1d",
+            "timeShift": null,
+            "type": "stat"
+        },
+        {
+            "datasource": null,
+            "description": "Milestone stats",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "blue",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 5,
+                "x": 16,
+                "y": 3
+            },
+            "id": 48,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {
+                    "titleSize": 18,
+                    "valueSize": 25
+                },
+                "textMode": "auto"
+            },
+            "pluginVersion": "7.5.5",
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "iota_node_milestones{type=\"confirmed\"}",
+                    "interval": "",
+                    "legendFormat": "Confirmed",
+                    "refId": "A"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "iota_node_milestones{type=\"latest\"}",
+                    "hide": false,
+                    "interval": "",
+                    "legendFormat": "Latest",
+                    "refId": "B"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "iota_node_milestones{type=\"latest\"} - on() iota_node_milestones{type=\"confirmed\"}",
+                    "hide": false,
+                    "interval": "",
+                    "legendFormat": "Milestones behind",
+                    "refId": "E"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "iota_node_milestones{type=\"latest\"} - on() iota_node_milestones{type=\"pruning\"}",
+                    "hide": false,
+                    "interval": "",
+                    "legendFormat": "Milestones in DB",
+                    "refId": "F"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "iota_node_milestones{type=\"pruning\"}",
+                    "hide": false,
+                    "interval": "",
+                    "legendFormat": "Pruning index",
+                    "refId": "C"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "iota_node_milestones{type=\"snapshot\"}",
+                    "hide": false,
+                    "interval": "",
+                    "legendFormat": "Snapshot index",
+                    "refId": "D"
+                }
+            ],
+            "title": "Milestones",
+            "type": "stat"
+        },
+        {
+            "datasource": null,
+            "description": "Pruning and compaction status",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [
+                        {
+                            "from": "0",
+                            "id": 1,
+                            "text": "No",
+                            "to": "",
+                            "type": 1,
+                            "value": "0"
+                        },
+                        {
+                            "from": "",
+                            "id": 2,
+                            "text": "Yes",
+                            "to": "",
+                            "type": 1,
+                            "value": "1"
+                        }
+                    ],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "red",
+                                "value": null
+                            },
+                            {
+                                "color": "green",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    "unit": "none"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 3,
+                "x": 21,
+                "y": 3
+            },
+            "id": 55,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "last"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "7.5.5",
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "iota_database_pruning_running",
+                    "hide": false,
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Pruning",
+                    "refId": "A"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "iota_database_compaction_running",
+                    "hide": false,
+                    "interval": "",
+                    "legendFormat": "Compacting",
+                    "refId": "B"
+                }
+            ],
+            "title": "Is compacting/pruning",
+            "transformations": [],
+            "type": "stat"
+        },
+        {
+            "datasource": null,
+            "description": "MPS in the last hour",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "blue",
+                                "value": null
+                            },
+                            {
+                                "color": "green",
+                                "value": 500
+                            },
+                            {
+                                "color": "super-light-yellow",
+                                "value": 1000
+                            },
+                            {
+                                "color": "dark-yellow",
+                                "value": 1500
+                            },
+                            {
+                                "color": "dark-orange",
+                                "value": 2000
+                            },
+                            {
+                                "color": "#ff0000",
+                                "value": 3000
+                            },
+                            {
+                                "color": "rgb(64, 0, 0)",
+                                "value": 4000
+                            }
+                        ]
+                    },
+                    "unit": "MPS"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 3,
+                "x": 4,
+                "y": 6
+            },
+            "id": 60,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "value"
+            },
+            "pluginVersion": "7.5.5",
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "iota_node_messages_per_second",
+                    "interval": "",
+                    "legendFormat": "",
+                    "refId": "A"
+                }
+            ],
+            "timeFrom": "1h",
+            "timeShift": null,
+            "type": "stat"
+        },
+        {
+            "collapsed": true,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 9
+            },
+            "id": 21,
+            "panels": [
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": null,
+                    "description": "Messages per second per type",
+                    "fieldConfig": {
+                        "defaults": {},
+                        "overrides": []
+                    },
+                    "fill": 1,
+                    "fillGradient": 0,
+                    "gridPos": {
+                        "h": 8,
+                        "w": 12,
+                        "x": 0,
+                        "y": 10
+                    },
+                    "hiddenSeries": false,
+                    "id": 18,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "nullPointMode": "null",
+                    "options": {
+                        "alertThreshold": true
+                    },
+                    "percentage": false,
+                    "pluginVersion": "7.5.5",
+                    "pointradius": 2,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "exemplar": true,
+                            "expr": "irate(iota_gossip_node_message_count{type=~\"$message_type\"}[$__rate_interval])",
+                            "instant": false,
+                            "interval": "",
+                            "legendFormat": "{{type}}",
+                            "refId": "A"
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeRegions": [],
+                    "timeShift": null,
+                    "title": "Messages Per Second",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "buckets": null,
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ],
+                    "yaxis": {
+                        "align": false,
+                        "alignLevel": null
+                    }
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": null,
+                    "description": "Requests Per second per type",
+                    "fieldConfig": {
+                        "defaults": {},
+                        "overrides": []
+                    },
+                    "fill": 1,
+                    "fillGradient": 0,
+                    "gridPos": {
+                        "h": 8,
+                        "w": 12,
+                        "x": 12,
+                        "y": 10
+                    },
+                    "hiddenSeries": false,
+                    "id": 38,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "nullPointMode": "null",
+                    "options": {
+                        "alertThreshold": true
+                    },
+                    "percentage": false,
+                    "pluginVersion": "7.5.5",
+                    "pointradius": 2,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "exemplar": true,
+                            "expr": "rate(iota_gossip_node_request_count[$__rate_interval])",
+                            "interval": "",
+                            "legendFormat": "{{type}}",
+                            "refId": "A"
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeRegions": [],
+                    "timeShift": null,
+                    "title": "Requests Per Second",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "buckets": null,
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ],
+                    "yaxis": {
+                        "align": false,
+                        "alignLevel": null
+                    }
+                },
+                {
+                    "datasource": null,
+                    "description": "Heartbeats per second",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "thresholds"
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "blue",
+                                        "value": null
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 5,
+                        "x": 0,
+                        "y": 18
+                    },
+                    "id": 34,
+                    "options": {
+                        "colorMode": "value",
+                        "graphMode": "none",
+                        "justifyMode": "auto",
+                        "orientation": "auto",
+                        "reduceOptions": {
+                            "calcs": [
+                                "lastNotNull"
+                            ],
+                            "fields": "",
+                            "values": false
+                        },
+                        "text": {},
+                        "textMode": "auto"
+                    },
+                    "pluginVersion": "7.5.5",
+                    "targets": [
+                        {
+                            "exemplar": true,
+                            "expr": "rate(iota_gossip_node_heartbeat_count[$__rate_interval])",
+                            "interval": "",
+                            "legendFormat": "{{type}}",
+                            "refId": "A"
+                        }
+                    ],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Heartbeats Per Second",
+                    "type": "stat"
+                },
+                {
+                    "datasource": null,
+                    "description": "Distribution of sent heartbeats per peer",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            },
+                            "unit": "short"
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 5,
+                        "x": 5,
+                        "y": 18
+                    },
+                    "id": 42,
+                    "options": {
+                        "displayLabels": [],
+                        "legend": {
+                            "displayMode": "hidden",
+                            "placement": "right",
+                            "values": []
+                        },
+                        "pieType": "pie",
+                        "reduceOptions": {
+                            "calcs": [
+                                "lastNotNull"
+                            ],
+                            "fields": "",
+                            "values": false
+                        },
+                        "text": {}
+                    },
+                    "pluginVersion": "7.5.5",
+                    "targets": [
+                        {
+                            "exemplar": true,
+                            "expr": "iota_gossip_peers_heartbeat_count{type=\"sent\"}",
+                            "instant": true,
+                            "interval": "",
+                            "legendFormat": "{{alias}} - Sent",
+                            "refId": "A"
+                        }
+                    ],
+                    "title": "Sent Heartbeats Per Peer",
+                    "type": "piechart"
+                },
+                {
+                    "datasource": null,
+                    "description": "Distribution of received heartbeats per peer",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            },
+                            "unit": "short"
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 5,
+                        "x": 10,
+                        "y": 18
+                    },
+                    "id": 41,
+                    "options": {
+                        "displayLabels": [],
+                        "legend": {
+                            "displayMode": "hidden",
+                            "placement": "bottom",
+                            "values": []
+                        },
+                        "pieType": "pie",
+                        "reduceOptions": {
+                            "calcs": [
+                                "lastNotNull"
+                            ],
+                            "fields": "",
+                            "values": false
+                        },
+                        "text": {}
+                    },
+                    "pluginVersion": "7.5.5",
+                    "targets": [
+                        {
+                            "exemplar": true,
+                            "expr": "iota_gossip_peers_heartbeat_count{type=\"received\"}",
+                            "instant": true,
+                            "interval": "",
+                            "legendFormat": "{{alias}} - Received",
+                            "refId": "A"
+                        }
+                    ],
+                    "title": "Received Heartbeats Per Peer",
+                    "type": "piechart"
+                },
+                {
+                    "datasource": null,
+                    "description": "Sum of dropped packages",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "thresholds"
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "red",
+                                        "value": null
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 4,
+                        "x": 15,
+                        "y": 18
+                    },
+                    "id": 36,
+                    "options": {
+                        "colorMode": "value",
+                        "graphMode": "none",
+                        "justifyMode": "auto",
+                        "orientation": "auto",
+                        "reduceOptions": {
+                            "calcs": [
+                                "lastNotNull"
+                            ],
+                            "fields": "",
+                            "values": false
+                        },
+                        "text": {},
+                        "textMode": "auto"
+                    },
+                    "pluginVersion": "7.5.5",
+                    "targets": [
+                        {
+                            "exemplar": true,
+                            "expr": "iota_gossip_node_dropped_count",
+                            "interval": "",
+                            "legendFormat": "",
+                            "refId": "A"
+                        }
+                    ],
+                    "title": "Dropped Packages",
+                    "type": "stat"
+                },
+                {
+                    "datasource": null,
+                    "description": "Distribution of dropped packages per peer",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            },
+                            "unit": "short"
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 5,
+                        "x": 19,
+                        "y": 18
+                    },
+                    "id": 40,
+                    "options": {
+                        "displayLabels": [],
+                        "legend": {
+                            "displayMode": "hidden",
+                            "placement": "right",
+                            "values": []
+                        },
+                        "pieType": "pie",
+                        "reduceOptions": {
+                            "calcs": [
+                                "lastNotNull"
+                            ],
+                            "fields": "",
+                            "values": false
+                        },
+                        "text": {}
+                    },
+                    "pluginVersion": "7.5.5",
+                    "targets": [
+                        {
+                            "exemplar": true,
+                            "expr": "iota_gossip_peers_dropped_count",
+                            "instant": true,
+                            "interval": "",
+                            "legendFormat": "{{alias}}",
+                            "refId": "A"
+                        }
+                    ],
+                    "title": "Dropped Packages Per Peer",
+                    "type": "piechart"
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": null,
+                    "description": "MPS per peer per type",
+                    "fieldConfig": {
+                        "defaults": {},
+                        "overrides": []
+                    },
+                    "fill": 1,
+                    "fillGradient": 0,
+                    "gridPos": {
+                        "h": 8,
+                        "w": 12,
+                        "x": 0,
+                        "y": 26
+                    },
+                    "hiddenSeries": false,
+                    "id": 25,
+                    "legend": {
+                        "alignAsTable": true,
+                        "avg": true,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "rightSide": true,
+                        "show": true,
+                        "total": false,
+                        "values": true
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "nullPointMode": "null",
+                    "options": {
+                        "alertThreshold": true
+                    },
+                    "percentage": false,
+                    "pluginVersion": "7.5.5",
+                    "pointradius": 2,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "exemplar": true,
+                            "expr": "rate(iota_gossip_peers_message_count{type=~\"$peer_message_type\", alias=~\"$peers\"}[1m])",
+                            "interval": "",
+                            "legendFormat": "{{alias}} - {{type}}",
+                            "refId": "A"
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeRegions": [],
+                    "timeShift": null,
+                    "title": "Messages Per Second Per Peer",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "buckets": null,
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ],
+                    "yaxis": {
+                        "align": false,
+                        "alignLevel": null
+                    }
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": null,
+                    "description": "Requests per second per peer",
+                    "fieldConfig": {
+                        "defaults": {},
+                        "overrides": []
+                    },
+                    "fill": 1,
+                    "fillGradient": 0,
+                    "gridPos": {
+                        "h": 8,
+                        "w": 12,
+                        "x": 12,
+                        "y": 26
+                    },
+                    "hiddenSeries": false,
+                    "id": 26,
+                    "legend": {
+                        "alignAsTable": true,
+                        "avg": true,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "rightSide": true,
+                        "show": true,
+                        "total": false,
+                        "values": true
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "nullPointMode": "null",
+                    "options": {
+                        "alertThreshold": true
+                    },
+                    "percentage": false,
+                    "pluginVersion": "7.5.5",
+                    "pointradius": 2,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "exemplar": true,
+                            "expr": "rate(iota_gossip_peers_request_count{type=~\"$peer_request_type\", alias=~\"$peers\"}[1m])",
+                            "interval": "",
+                            "legendFormat": "{{alias}} - {{type}}",
+                            "refId": "A"
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeRegions": [],
+                    "timeShift": null,
+                    "title": "Requsts Per Second Per Peer",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "buckets": null,
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ],
+                    "yaxis": {
+                        "align": false,
+                        "alignLevel": null
+                    }
+                }
+            ],
+            "title": "Gossip",
+            "type": "row"
+        },
+        {
+            "collapsed": true,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 10
+            },
+            "id": 28,
+            "panels": [
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": null,
+                    "description": "Cache sizes per type",
+                    "fieldConfig": {
+                        "defaults": {},
+                        "overrides": []
+                    },
+                    "fill": 1,
+                    "fillGradient": 0,
+                    "gridPos": {
+                        "h": 8,
+                        "w": 10,
+                        "x": 0,
+                        "y": 11
+                    },
+                    "hiddenSeries": false,
+                    "id": 30,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "nullPointMode": "null",
+                    "options": {
+                        "alertThreshold": true
+                    },
+                    "percentage": false,
+                    "pluginVersion": "7.5.5",
+                    "pointradius": 2,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "exemplar": true,
+                            "expr": "iota_caches_size",
+                            "interval": "",
+                            "legendFormat": "{{type}}",
+                            "refId": "A"
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeRegions": [],
+                    "timeShift": null,
+                    "title": "Caches Size",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "buckets": null,
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ],
+                    "yaxis": {
+                        "align": false,
+                        "alignLevel": null
+                    }
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": null,
+                    "description": "Size of the Ledger database",
+                    "fieldConfig": {
+                        "defaults": {
+                            "unit": "decbytes"
+                        },
+                        "overrides": []
+                    },
+                    "fill": 1,
+                    "fillGradient": 0,
+                    "gridPos": {
+                        "h": 8,
+                        "w": 10,
+                        "x": 10,
+                        "y": 11
+                    },
+                    "hiddenSeries": false,
+                    "id": 63,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "nullPointMode": "null",
+                    "options": {
+                        "alertThreshold": true
+                    },
+                    "percentage": false,
+                    "pluginVersion": "7.5.5",
+                    "pointradius": 2,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "exemplar": true,
+                            "expr": "iota_database_size_bytes",
+                            "interval": "",
+                            "legendFormat": "",
+                            "refId": "A"
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeRegions": [],
+                    "timeShift": null,
+                    "title": "Database size",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "buckets": null,
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "decbytes",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ],
+                    "yaxis": {
+                        "align": false,
+                        "alignLevel": null
+                    }
+                },
+                {
+                    "datasource": null,
+                    "description": "Compaction and Pruning Counts",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "thresholds"
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "blue",
+                                        "value": null
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 4,
+                        "x": 20,
+                        "y": 11
+                    },
+                    "id": 32,
+                    "options": {
+                        "colorMode": "value",
+                        "graphMode": "none",
+                        "justifyMode": "auto",
+                        "orientation": "auto",
+                        "reduceOptions": {
+                            "calcs": [
+                                "lastNotNull"
+                            ],
+                            "fields": "",
+                            "values": false
+                        },
+                        "text": {},
+                        "textMode": "auto"
+                    },
+                    "pluginVersion": "7.5.5",
+                    "targets": [
+                        {
+                            "exemplar": true,
+                            "expr": "iota_database_pruning_count",
+                            "interval": "",
+                            "legendFormat": "Pruning",
+                            "refId": "A"
+                        },
+                        {
+                            "exemplar": true,
+                            "expr": "iota_database_compaction_count",
+                            "hide": false,
+                            "interval": "",
+                            "legendFormat": "Compaction",
+                            "refId": "B"
+                        }
+                    ],
+                    "title": "Compaction/Pruning Counts",
+                    "type": "stat"
+                }
+            ],
+            "title": "Storage",
+            "type": "row"
+        },
+        {
+            "collapsed": true,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 11
+            },
+            "id": 44,
+            "panels": [
+                {
+                    "datasource": null,
+                    "description": "Stats for the migration receipts",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "thresholds"
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "blue",
+                                        "value": null
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 5,
+                        "w": 24,
+                        "x": 0,
+                        "y": 12
+                    },
+                    "id": 46,
+                    "options": {
+                        "colorMode": "value",
+                        "graphMode": "none",
+                        "justifyMode": "auto",
+                        "orientation": "auto",
+                        "reduceOptions": {
+                            "calcs": [
+                                "lastNotNull"
+                            ],
+                            "fields": "",
+                            "values": false
+                        },
+                        "text": {},
+                        "textMode": "auto"
+                    },
+                    "pluginVersion": "7.5.5",
+                    "targets": [
+                        {
+                            "exemplar": true,
+                            "expr": "iota_migrator_receipt_count",
+                            "interval": "",
+                            "legendFormat": "Receipt Count",
+                            "refId": "A"
+                        },
+                        {
+                            "exemplar": true,
+                            "expr": "iota_migrator_receipt_entries_applied_count",
+                            "hide": false,
+                            "interval": "",
+                            "legendFormat": "Receipt Entries Applied Count",
+                            "refId": "B"
+                        }
+                    ],
+                    "title": "Receipts Metrics",
+                    "type": "stat"
+                }
+            ],
+            "title": "Migrator",
+            "type": "row"
+        },
+        {
+            "collapsed": true,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 12
+            },
+            "id": 16,
+            "panels": [
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": null,
+                    "description": "Amount of tips per second",
+                    "fieldConfig": {
+                        "defaults": {},
+                        "overrides": []
+                    },
+                    "fill": 1,
+                    "fillGradient": 0,
+                    "gridPos": {
+                        "h": 8,
+                        "w": 9,
+                        "x": 0,
+                        "y": 13
+                    },
+                    "hiddenSeries": false,
+                    "id": 19,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "nullPointMode": "null",
+                    "options": {
+                        "alertThreshold": true
+                    },
+                    "percentage": false,
+                    "pluginVersion": "7.5.5",
+                    "pointradius": 2,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "exemplar": true,
+                            "expr": "rate(iota_node_tip_count[5m])",
+                            "instant": false,
+                            "interval": "",
+                            "legendFormat": " {{type}}",
+                            "refId": "A"
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeRegions": [],
+                    "timeShift": null,
+                    "title": "Tips",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "buckets": null,
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ],
+                    "yaxis": {
+                        "align": false,
+                        "alignLevel": null
+                    }
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": null,
+                    "description": "Messages to request per second",
+                    "fieldConfig": {
+                        "defaults": {},
+                        "overrides": []
+                    },
+                    "fill": 1,
+                    "fillGradient": 0,
+                    "gridPos": {
+                        "h": 8,
+                        "w": 9,
+                        "x": 9,
+                        "y": 13
+                    },
+                    "hiddenSeries": false,
+                    "id": 50,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "nullPointMode": "null",
+                    "options": {
+                        "alertThreshold": true
+                    },
+                    "percentage": false,
+                    "pluginVersion": "7.5.5",
+                    "pointradius": 2,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "exemplar": true,
+                            "expr": "rate(iota_node_request_count[$__rate_interval])",
+                            "instant": false,
+                            "interval": "",
+                            "legendFormat": " {{type}}",
+                            "refId": "A"
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeRegions": [],
+                    "timeShift": null,
+                    "title": "Messages To Request",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "buckets": null,
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ],
+                    "yaxis": {
+                        "align": false,
+                        "alignLevel": null
+                    }
+                },
+                {
+                    "datasource": null,
+                    "description": "Http request errors",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "thresholds"
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "red",
+                                        "value": null
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 6,
+                        "x": 18,
+                        "y": 13
+                    },
+                    "id": 52,
+                    "options": {
+                        "colorMode": "value",
+                        "graphMode": "none",
+                        "justifyMode": "auto",
+                        "orientation": "auto",
+                        "reduceOptions": {
+                            "calcs": [
+                                "lastNotNull"
+                            ],
+                            "fields": "",
+                            "values": false
+                        },
+                        "text": {},
+                        "textMode": "auto"
+                    },
+                    "pluginVersion": "7.5.5",
+                    "targets": [
+                        {
+                            "exemplar": true,
+                            "expr": "iota_restapi_http_request_error_count",
+                            "interval": "",
+                            "legendFormat": "",
+                            "refId": "A"
+                        }
+                    ],
+                    "title": "Http Request Errors",
+                    "type": "stat"
+                }
+            ],
+            "title": "Additional Metrics",
+            "type": "row"
+        }
+    ],
+    "refresh": "5s",
+    "schemaVersion": 27,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+        "list": [
+            {
+                "allValue": null,
+                "current": {},
+                "datasource": "${DS_PROMETHEUS}",
+                "definition": "label_values(iota_gossip_node_message_count, type)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": true,
+                "label": null,
+                "multi": true,
+                "name": "message_type",
+                "options": [],
+                "query": {
+                    "query": "label_values(iota_gossip_node_message_count, type)",
+                    "refId": "StandardVariableQuery"
+                },
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tags": [],
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {},
+                "datasource": "${DS_PROMETHEUS}",
+                "definition": "label_values(iota_gossip_peers_message_count, alias)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": true,
+                "label": null,
+                "multi": true,
+                "name": "peers",
+                "options": [],
+                "query": {
+                    "query": "label_values(iota_gossip_peers_message_count, alias)",
+                    "refId": "StandardVariableQuery"
+                },
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tags": [],
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {},
+                "datasource": "${DS_PROMETHEUS}",
+                "definition": "label_values(iota_gossip_peers_message_count, type)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": true,
+                "label": null,
+                "multi": true,
+                "name": "peer_message_type",
+                "options": [],
+                "query": {
+                    "query": "label_values(iota_gossip_peers_message_count, type)",
+                    "refId": "StandardVariableQuery"
+                },
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tags": [],
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {},
+                "datasource": "${DS_PROMETHEUS}",
+                "definition": "label_values(iota_gossip_peers_request_count, type)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": true,
+                "label": null,
+                "multi": true,
+                "name": "peer_request_type",
+                "options": [],
+                "query": {
+                    "query": "label_values(iota_gossip_peers_request_count, type)",
+                    "refId": "StandardVariableQuery"
+                },
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tags": [],
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            }
+        ]
+    },
+    "time": {
+        "from": "now-6h",
+        "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "Node Dashboard",
+    "uid": "ysXSUr9Mk",
+    "version": 48
+}
