@@ -1,0 +1,10 @@
+[book]
+authors = ["Dr-Electron"]
+language = "en"
+multilingual = false
+src = "docs"
+title = "iota-grafana"
+
+[output.html]
+git-repository-url = "https://github.com/dr-electron/iota-grafana"
+git-repository-icon = "fa-github"
