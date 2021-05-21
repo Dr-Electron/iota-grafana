@@ -2005,7 +2005,7 @@
                     "timeFrom": null,
                     "timeRegions": [],
                     "timeShift": null,
-                    "title": "Requsts Per Second Per Peer",
+                    "title": "Requests Per Second Per Peer",
                     "tooltip": {
                         "shared": true,
                         "sort": 0,
